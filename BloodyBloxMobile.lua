@@ -29,7 +29,7 @@ ScreenGui.Parent = GuiParent
 
 local Main = Instance.new("Frame")
 Main.Name = "Main"
-Main.Size = UDim2.new(0, 340, 0, 220)
+Main.Size = UDim2.new(0, 340, 0, 195)
 Main.Position = UDim2.new(0.5, -170, 0, 100)
 Main.ZIndex = 1
 Main.BackgroundColor3 = Color3.fromRGB(12, 12, 15)
@@ -77,7 +77,7 @@ Shadow.Parent = Main
 
 local TopBar = Instance.new("Frame")
 TopBar.Name = "TopBar"
-TopBar.Size = UDim2.new(1, 0, 0, 45)
+TopBar.Size = UDim2.new(1, 0, 0, 32)
 TopBar.BackgroundColor3 = Color3.fromRGB(15, 15, 18)
 TopBar.BackgroundTransparency = 0.30
 TopBar.BorderSizePixel = 0
@@ -107,11 +107,11 @@ TopBarLine.Parent = TopBar
 
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(0, 400, 1, 0)
-Title.Position = UDim2.new(0, 15, 0, 0)
+Title.Position = UDim2.new(0, 10, 0, 0)
 Title.BackgroundTransparency = 1
 Title.Text = "BLOODYNIGHT"
 Title.TextColor3 = Color3.fromRGB(139, 0, 0)
-Title.TextSize = 18
+Title.TextSize = 14
 Title.Font = Enum.Font.GothamBold
 Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.ZIndex = 2
@@ -119,24 +119,24 @@ Title.Parent = TopBar
 
 local Version = Instance.new("TextLabel")
 Version.Size = UDim2.new(0, 100, 1, 0)
-Version.Position = UDim2.new(0, 145, 0, 0)
+Version.Position = UDim2.new(0, 110, 0, 0)
 Version.BackgroundTransparency = 1
 Version.Text = "BETA 0.3.0"
 Version.TextColor3 = Color3.fromRGB(80, 80, 85)
-Version.TextSize = 11
+Version.TextSize = 10
 Version.Font = Enum.Font.GothamBold
 Version.TextXAlignment = Enum.TextXAlignment.Left
 Version.ZIndex = 2
 Version.Parent = TopBar
 
 local CloseBtn = Instance.new("TextButton")
-CloseBtn.Size = UDim2.new(0, 30, 0, 30)
-CloseBtn.Position = UDim2.new(1, -40, 0.5, -15)
+CloseBtn.Size = UDim2.new(0, 22, 0, 22)
+CloseBtn.Position = UDim2.new(1, -30, 0.5, -11)
 CloseBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
 CloseBtn.BorderSizePixel = 0
 CloseBtn.Text = "X"
 CloseBtn.TextColor3 = Color3.fromRGB(255, 80, 80)
-CloseBtn.TextSize = 16
+CloseBtn.TextSize = 13
 CloseBtn.Font = Enum.Font.GothamBold
 CloseBtn.ZIndex = 2
 CloseBtn.Parent = TopBar
@@ -154,8 +154,8 @@ CloseBtn.MouseLeave:Connect(function()
 end)
 
 local SidebarScroll = Instance.new("ScrollingFrame")
-SidebarScroll.Size = UDim2.new(0, 180, 1, -55)
-SidebarScroll.Position = UDim2.new(0, 10, 0, 50)
+SidebarScroll.Size = UDim2.new(0, 170, 1, -40)
+SidebarScroll.Position = UDim2.new(0, 6, 0, 36)
 SidebarScroll.BackgroundTransparency = 1
 SidebarScroll.BorderSizePixel = 0
 SidebarScroll.ScrollBarThickness = 4
@@ -173,12 +173,12 @@ Sidebar.Parent = SidebarScroll
 
 local TabList = Instance.new("UIListLayout")
 TabList.SortOrder = Enum.SortOrder.LayoutOrder
-TabList.Padding = UDim.new(0, 6)
+TabList.Padding = UDim.new(0, 3)
 TabList.Parent = Sidebar
 
 local ContentArea = Instance.new("Frame")
-ContentArea.Size = UDim2.new(1, -210, 1, -65)
-ContentArea.Position = UDim2.new(0, 200, 0, 55)
+ContentArea.Size = UDim2.new(1, -186, 1, -40)
+ContentArea.Position = UDim2.new(0, 180, 0, 36)
 ContentArea.BackgroundColor3 = Color3.fromRGB(15, 15, 18)
 ContentArea.BorderSizePixel = 0
 ContentArea.ZIndex = 1
@@ -198,7 +198,7 @@ local ActiveTab = nil
 
 local function CreateTab(name)
     local TabBtn = Instance.new("TextButton")
-    TabBtn.Size = UDim2.new(1, 0, 0, 38)
+    TabBtn.Size = UDim2.new(1, 0, 0, 28)
     TabBtn.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
     TabBtn.BorderSizePixel = 0
     TabBtn.Text = ""
@@ -212,11 +212,11 @@ local function CreateTab(name)
 
     local TabLabel = Instance.new("TextLabel")
     TabLabel.Size = UDim2.new(1, -20, 1, 0)
-    TabLabel.Position = UDim2.new(0, 15, 0, 0)
+    TabLabel.Position = UDim2.new(0, 12, 0, 0)
     TabLabel.BackgroundTransparency = 1
     TabLabel.Text = name
     TabLabel.TextColor3 = Color3.fromRGB(140, 140, 150)
-    TabLabel.TextSize = 13
+    TabLabel.TextSize = 12
     TabLabel.Font = Enum.Font.GothamBold
     TabLabel.TextXAlignment = Enum.TextXAlignment.Left
     TabLabel.ZIndex = 3
@@ -236,8 +236,8 @@ local function CreateTab(name)
     IndicatorCorner.Parent = Indicator
 
     local Content = Instance.new("ScrollingFrame")
-    Content.Size = UDim2.new(1, -20, 1, -20)
-    Content.Position = UDim2.new(0, 10, 0, 10)
+    Content.Size = UDim2.new(1, -14, 1, -14)
+    Content.Position = UDim2.new(0, 7, 0, 7)
     Content.BackgroundTransparency = 1
     Content.BorderSizePixel = 0
     Content.ScrollBarThickness = 4
@@ -249,7 +249,7 @@ local function CreateTab(name)
 
     local Layout = Instance.new("UIListLayout")
     Layout.SortOrder = Enum.SortOrder.LayoutOrder
-    Layout.Padding = UDim.new(0, 8)
+    Layout.Padding = UDim.new(0, 4)
     Layout.Parent = Content
 
     Layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
@@ -299,7 +299,7 @@ end
 
 local function AddToggle(parent, text, default, callback)
     local Container = Instance.new("Frame")
-    Container.Size = UDim2.new(1, 0, 0, 42)
+    Container.Size = UDim2.new(1, 0, 0, 30)
     Container.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
     Container.BorderSizePixel = 0
     Container.ZIndex = 2
@@ -310,20 +310,20 @@ local function AddToggle(parent, text, default, callback)
     Corner.Parent = Container
 
     local Label = Instance.new("TextLabel")
-    Label.Size = UDim2.new(1, -70, 1, 0)
-    Label.Position = UDim2.new(0, 12, 0, 0)
+    Label.Size = UDim2.new(1, -62, 1, 0)
+    Label.Position = UDim2.new(0, 10, 0, 0)
     Label.BackgroundTransparency = 1
     Label.Text = text
     Label.TextColor3 = Color3.fromRGB(220, 220, 230)
-    Label.TextSize = 13
+    Label.TextSize = 12
     Label.Font = Enum.Font.GothamSemibold
     Label.TextXAlignment = Enum.TextXAlignment.Left
     Label.ZIndex = 3
     Label.Parent = Container
 
     local ToggleFrame = Instance.new("Frame")
-    ToggleFrame.Size = UDim2.new(0, 44, 0, 22)
-    ToggleFrame.Position = UDim2.new(1, -54, 0.5, -11)
+    ToggleFrame.Size = UDim2.new(0, 38, 0, 18)
+    ToggleFrame.Position = UDim2.new(1, -46, 0.5, -9)
     ToggleFrame.BackgroundColor3 = default and Color3.fromRGB(139, 0, 0) or Color3.fromRGB(35, 35, 40)
     ToggleFrame.BorderSizePixel = 0
     ToggleFrame.ZIndex = 3
@@ -334,8 +334,8 @@ local function AddToggle(parent, text, default, callback)
     ToggleCorner.Parent = ToggleFrame
 
     local Circle = Instance.new("Frame")
-    Circle.Size = UDim2.new(0, 16, 0, 16)
-    Circle.Position = default and UDim2.new(1, -19, 0.5, -8) or UDim2.new(0, 3, 0.5, -8)
+    Circle.Size = UDim2.new(0, 14, 0, 14)
+    Circle.Position = default and UDim2.new(1, -16, 0.5, -7) or UDim2.new(0, 2, 0.5, -7)
     Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Circle.BorderSizePixel = 0
     Circle.ZIndex = 4
@@ -362,7 +362,7 @@ local function AddToggle(parent, text, default, callback)
         }):Play()
 
         TweenService:Create(Circle, TweenInfo.new(0.2, Enum.EasingStyle.Quad), {
-            Position = enabled and UDim2.new(1, -19, 0.5, -8) or UDim2.new(0, 3, 0.5, -8)
+            Position = enabled and UDim2.new(1, -16, 0.5, -7) or UDim2.new(0, 2, 0.5, -7)
         }):Play()
 
         callback(enabled)
@@ -371,12 +371,12 @@ end
 
 local function AddButton(parent, text, callback)
     local Button = Instance.new("TextButton")
-    Button.Size = UDim2.new(1, 0, 0, 38)
+    Button.Size = UDim2.new(1, 0, 0, 28)
     Button.BackgroundColor3 = Color3.fromRGB(139, 0, 0)
     Button.BorderSizePixel = 0
     Button.Text = text
     Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Button.TextSize = 13
+    Button.TextSize = 12
     Button.Font = Enum.Font.GothamBold
     Button.AutoButtonColor = false
     Button.ZIndex = 2
@@ -404,7 +404,7 @@ end
 
 local function AddSlider(parent, text, min, max, default, callback)
     local Container = Instance.new("Frame")
-    Container.Size = UDim2.new(1, 0, 0, 60)
+    Container.Size = UDim2.new(1, 0, 0, 44)
     Container.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
     Container.BorderSizePixel = 0
     Container.ZIndex = 2
@@ -415,32 +415,32 @@ local function AddSlider(parent, text, min, max, default, callback)
     Corner.Parent = Container
 
     local Label = Instance.new("TextLabel")
-    Label.Size = UDim2.new(0.65, 0, 0, 20)
-    Label.Position = UDim2.new(0, 12, 0, 8)
+    Label.Size = UDim2.new(0.65, 0, 0, 16)
+    Label.Position = UDim2.new(0, 10, 0, 5)
     Label.BackgroundTransparency = 1
     Label.Text = text
     Label.TextColor3 = Color3.fromRGB(220, 220, 230)
-    Label.TextSize = 13
+    Label.TextSize = 12
     Label.Font = Enum.Font.GothamSemibold
     Label.TextXAlignment = Enum.TextXAlignment.Left
     Label.ZIndex = 3
     Label.Parent = Container
 
     local Value = Instance.new("TextLabel")
-    Value.Size = UDim2.new(0.35, -12, 0, 20)
-    Value.Position = UDim2.new(0.65, 0, 0, 8)
+    Value.Size = UDim2.new(0.35, -10, 0, 16)
+    Value.Position = UDim2.new(0.65, 0, 0, 5)
     Value.BackgroundTransparency = 1
     Value.Text = tostring(default)
     Value.TextColor3 = Color3.fromRGB(139, 0, 0)
-    Value.TextSize = 13
+    Value.TextSize = 12
     Value.Font = Enum.Font.GothamBold
     Value.TextXAlignment = Enum.TextXAlignment.Right
     Value.ZIndex = 3
     Value.Parent = Container
 
     local SliderBack = Instance.new("Frame")
-    SliderBack.Size = UDim2.new(1, -24, 0, 6)
-    SliderBack.Position = UDim2.new(0, 12, 0, 38)
+    SliderBack.Size = UDim2.new(1, -20, 0, 5)
+    SliderBack.Position = UDim2.new(0, 10, 0, 28)
     SliderBack.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
     SliderBack.BorderSizePixel = 0
     SliderBack.ZIndex = 3
@@ -514,7 +514,7 @@ end
 
 local function AddDropdown(parent, text, options, callback)
     local Container = Instance.new("Frame")
-    Container.Size = UDim2.new(1, 0, 0, 42)
+    Container.Size = UDim2.new(1, 0, 0, 30)
     Container.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
     Container.BorderSizePixel = 0
     Container.ZIndex = 2
@@ -526,19 +526,19 @@ local function AddDropdown(parent, text, options, callback)
 
     local Label = Instance.new("TextLabel")
     Label.Size = UDim2.new(0.35, 0, 1, 0)
-    Label.Position = UDim2.new(0, 12, 0, 0)
+    Label.Position = UDim2.new(0, 10, 0, 0)
     Label.BackgroundTransparency = 1
     Label.Text = text
     Label.TextColor3 = Color3.fromRGB(220, 220, 230)
-    Label.TextSize = 12
+    Label.TextSize = 11
     Label.Font = Enum.Font.GothamSemibold
     Label.TextXAlignment = Enum.TextXAlignment.Left
     Label.ZIndex = 3
     Label.Parent = Container
 
     local Dropdown = Instance.new("TextButton")
-    Dropdown.Size = UDim2.new(0.62, -16, 0, 28)
-    Dropdown.Position = UDim2.new(0.38, 0, 0.5, -14)
+    Dropdown.Size = UDim2.new(0.62, -14, 0, 22)
+    Dropdown.Position = UDim2.new(0.38, 0, 0.5, -11)
     Dropdown.BackgroundColor3 = Color3.fromRGB(28, 28, 33)
     Dropdown.BorderSizePixel = 0
     Dropdown.Text = "  Select..."
@@ -566,7 +566,7 @@ local function AddDropdown(parent, text, options, callback)
     Arrow.Parent = Dropdown
 
     local List = Instance.new("Frame")
-    List.Size = UDim2.new(0.62, -16, 0, math.min(#options * 28, 112))
+    List.Size = UDim2.new(0.62, -14, 0, math.min(#options * 24, 96))
     List.Position = UDim2.new(0.38, 0, 1, 4)
     List.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
     List.BorderSizePixel = 0
@@ -590,14 +590,14 @@ local function AddDropdown(parent, text, options, callback)
     Scroll.BorderSizePixel = 0
     Scroll.ScrollBarThickness = 3
     Scroll.ScrollBarImageColor3 = Color3.fromRGB(139, 0, 0)
-    Scroll.CanvasSize = UDim2.new(0, 0, 0, #options * 28)
+    Scroll.CanvasSize = UDim2.new(0, 0, 0, #options * 24)
     Scroll.ZIndex = 11
     Scroll.Parent = List
 
     for i, option in ipairs(options) do
         local Opt = Instance.new("TextButton")
-        Opt.Size = UDim2.new(1, 0, 0, 28)
-        Opt.Position = UDim2.new(0, 0, 0, (i - 1) * 28)
+        Opt.Size = UDim2.new(1, 0, 0, 24)
+        Opt.Position = UDim2.new(0, 0, 0, (i - 1) * 24)
         Opt.BackgroundColor3 = Color3.fromRGB(28, 28, 33)
         Opt.BorderSizePixel = 0
         Opt.Text = "  " .. option
@@ -663,8 +663,8 @@ local function AddDropdown(parent, text, options, callback)
                     callback(option)
                 end)
             end
-            Scroll.CanvasSize = UDim2.new(0, 0, 0, #newOptions * 28)
-            List.Size = UDim2.new(0.62, -16, 0, math.min(#newOptions * 28, 112))
+            Scroll.CanvasSize = UDim2.new(0, 0, 0, #newOptions * 24)
+            List.Size = UDim2.new(0.62, -14, 0, math.min(#newOptions * 24, 96))
         end
     }
 end
@@ -772,15 +772,18 @@ local Config = {
     UI = {ShowWatermark = true, WatermarkMove = false}
 }
 
+local menuOpen = true
+local menuAnimating = false
+
 local function GetMenuSize()
     local baseWidth = 340
-    local baseHeight = 220
+    local baseHeight = 195
     return baseWidth * Config.MenuSize, baseHeight * Config.MenuSize
 end
 
 local function UpdateMenuSize()
     local width, height = GetMenuSize()
-    if Main.Visible then
+    if menuOpen then
         TweenService:Create(Main, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {
             Size = UDim2.new(0, width, 0, height),
             Position = UDim2.new(0.5, -width/2, 0, 100)
@@ -789,6 +792,36 @@ local function UpdateMenuSize()
         Main.Size = UDim2.new(0, width, 0, height)
         Main.Position = UDim2.new(0.5, -width/2, 0, 100)
     end
+end
+
+local function ToggleMenu()
+    if menuAnimating then return end
+    menuAnimating = true
+    local width, height = GetMenuSize()
+
+    if menuOpen then
+        menuOpen = false
+        local currentPos = Main.Position
+        TweenService:Create(Main, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+            Size = UDim2.new(0, 0, 0, 0),
+            Position = UDim2.new(currentPos.X.Scale, currentPos.X.Offset, currentPos.Y.Scale, currentPos.Y.Offset)
+        }):Play()
+        task.wait(0.25)
+        Main.Visible = false
+        Main.Size = UDim2.new(0, width, 0, height)
+    else
+        menuOpen = true
+        Main.Visible = true
+        local savedPos = UDim2.new(0.5, -width/2, 0, 100)
+        Main.Position = savedPos
+        Main.Size = UDim2.new(0, 0, 0, 0)
+        TweenService:Create(Main, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+            Size = UDim2.new(0, width, 0, height),
+            Position = savedPos
+        }):Play()
+    end
+
+    menuAnimating = false
 end
 
 local Connections = {}
@@ -2104,25 +2137,7 @@ local waterDragging, waterDragStart, waterStartPos
 
 WaterButton.MouseButton1Click:Connect(function()
     if not Config.UI.WatermarkMove then
-        local width, height = GetMenuSize()
-        if Main.Visible then
-            local currentPos = Main.Position
-            TweenService:Create(Main, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                Size = UDim2.new(0, 0, 0, 0),
-                Position = UDim2.new(currentPos.X.Scale, currentPos.X.Offset, currentPos.Y.Scale, currentPos.Y.Offset)
-            }):Play()
-            task.wait(0.25)
-            Main.Visible = false
-            Main.Size = UDim2.new(0, width, 0, height)
-        else
-            Main.Visible = true
-            local savedPos = Main.Position
-            Main.Size = UDim2.new(0, 0, 0, 0)
-            TweenService:Create(Main, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-                Size = UDim2.new(0, width, 0, height),
-                Position = savedPos
-            }):Play()
-        end
+        ToggleMenu()
     end
 end)
 
@@ -2191,15 +2206,9 @@ AddSlider(SettingTab, "Menu Size", 50, 150, 100, function(value)
 end)
 
 CloseBtn.MouseButton1Click:Connect(function()
-    local width, height = GetMenuSize()
-    local currentPos = Main.Position
-    TweenService:Create(Main, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-        Size = UDim2.new(0, 0, 0, 0),
-        Position = UDim2.new(currentPos.X.Scale, currentPos.X.Offset, currentPos.Y.Scale, currentPos.Y.Offset)
-    }):Play()
-    task.wait(0.25)
-    Main.Visible = false
-    Main.Size = UDim2.new(0, width, 0, height)
+    if menuOpen then
+        ToggleMenu()
+    end
 end)
 
 local dragging, dragInput, dragStart, startPos
@@ -2238,25 +2247,7 @@ end)
 UserInputService.InputBegan:Connect(function(input, gpe)
     if gpe then return end
     if input.KeyCode == Enum.KeyCode.Insert then
-        local width, height = GetMenuSize()
-        if Main.Visible then
-            local currentPos = Main.Position
-            TweenService:Create(Main, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                Size = UDim2.new(0, 0, 0, 0),
-                Position = UDim2.new(currentPos.X.Scale, currentPos.X.Offset, currentPos.Y.Scale, currentPos.Y.Offset)
-            }):Play()
-            task.wait(0.25)
-            Main.Visible = false
-            Main.Size = UDim2.new(0, width, 0, height)
-        else
-            Main.Visible = true
-            local savedPos = Main.Position
-            Main.Size = UDim2.new(0, 0, 0, 0)
-            TweenService:Create(Main, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-                Size = UDim2.new(0, width, 0, height),
-                Position = savedPos
-            }):Play()
-        end
+        ToggleMenu()
     end
 end)
 
@@ -2266,7 +2257,7 @@ task.wait(0.1)
 local width, height = GetMenuSize()
 TweenService:Create(Main, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
     Size = UDim2.new(0, width, 0, height),
-    Position = UDim2.new(0.5, -170, 0.5, -110)
+    Position = UDim2.new(0.5, -width/2, 0, 100)
 }):Play()
 
 print("✓ BloodyNight Beta 0.5.1 loaded!")
