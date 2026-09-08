@@ -30,7 +30,7 @@ ScreenGui.Parent = GuiParent
 local Main = Instance.new("Frame")
 Main.Name = "Main"
 Main.Size = UDim2.new(0, 340, 0, 220)
-Main.Position = UDim2.new(0.5, -425, 0, 20)
+Main.Position = UDim2.new(0.5, -170, 0, 20)
 Main.BackgroundColor3 = Color3.fromRGB(12, 12, 15)
 Main.BackgroundTransparency = 0.30
 Main.BorderSizePixel = 0
@@ -2208,7 +2208,7 @@ local function update(input)
 end
 
 TopBar.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
         dragging = true
         dragStart = input.Position
         startPos = Main.Position
@@ -2222,7 +2222,7 @@ TopBar.InputBegan:Connect(function(input)
 end)
 
 TopBar.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement then
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
         dragInput = input
     end
 end)
@@ -2264,7 +2264,7 @@ task.wait(0.1)
 local width, height = GetMenuSize()
 TweenService:Create(Main, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
     Size = UDim2.new(0, width, 0, height),
-    Position = UDim2.new(0.5, -425, 0.5, -275)
+    Position = UDim2.new(0.5, -170, 0.5, -110)
 }):Play()
 
 print("✓ BloodyNight Beta 0.5.1 loaded!")
