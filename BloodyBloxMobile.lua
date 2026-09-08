@@ -30,7 +30,8 @@ ScreenGui.Parent = GuiParent
 local Main = Instance.new("Frame")
 Main.Name = "Main"
 Main.Size = UDim2.new(0, 340, 0, 220)
-Main.Position = UDim2.new(0.5, -170, 0, 20)
+Main.Position = UDim2.new(0.5, -170, 0, 100)
+Main.ZIndex = 1
 Main.BackgroundColor3 = Color3.fromRGB(12, 12, 15)
 Main.BackgroundTransparency = 0.30
 Main.BorderSizePixel = 0
@@ -782,11 +783,11 @@ local function UpdateMenuSize()
     if Main.Visible then
         TweenService:Create(Main, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {
             Size = UDim2.new(0, width, 0, height),
-            Position = UDim2.new(0.5, -width/2, 0, 20)
+            Position = UDim2.new(0.5, -width/2, 0, 100)
         }):Play()
     else
         Main.Size = UDim2.new(0, width, 0, height)
-        Main.Position = UDim2.new(0.5, -width/2, 0, 20)
+        Main.Position = UDim2.new(0.5, -width/2, 0, 100)
     end
 end
 
@@ -2054,10 +2055,11 @@ end)
 local Watermark = Instance.new("Frame")
 Watermark.Name = "Watermark"
 Watermark.Size = UDim2.new(0, 200, 0, 42)
-Watermark.Position = UDim2.new(0.5, -100, 0, 12)
+Watermark.Position = UDim2.new(0.5, -100, 0, 44)
 Watermark.BackgroundColor3 = Color3.fromRGB(12, 12, 15)
 Watermark.BackgroundTransparency = 0.25
 Watermark.BorderSizePixel = 0
+Watermark.ZIndex = 5
 Watermark.Parent = ScreenGui
 
 local WaterCorner = Instance.new("UICorner")
